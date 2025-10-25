@@ -1,19 +1,21 @@
 {
   "version": 2,
+  "functions": {
+    "api/**/*.py": {
+      "runtime": "python3.11"
+    }
+  },
   "builds": [
     {
       "src": "frontend/package.json",
       "use": "@vercel/static-build",
       "config": { "distDir": "frontend/dist" }
-    },
-    {
-      "src": "api/*.py",
-      "use": "@vercel/python",
-      "config": { "runtime": "python3.11" }
     }
   ],
   "routes": [
-    { "src": "/api/(.*)", "dest": "/api/$1.py" },
+    { "src": "/api/rides/?", "dest": "/api/rides/index.py" },
+    { "src": "/api/report/?", "dest": "/api/report.py" },
+    { "src": "/api/(.*)", "dest": "/api/$1" },
     { "src": "/(.*)", "dest": "frontend/dist/$1" }
   ]
 }
