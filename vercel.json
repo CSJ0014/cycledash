@@ -4,10 +4,12 @@
     {
       "src": "frontend/package.json",
       "use": "@vercel/static-build",
-      "config": { "distDir": "frontend/dist" }
+      "config": {
+        "distDir": "frontend/dist"
+      }
     },
     {
-      "src": "api/**/*.py",
+      "src": "api/*.py",
       "use": "@vercel/python"
     }
   ],
