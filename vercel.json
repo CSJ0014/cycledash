@@ -7,13 +7,13 @@
       "config": { "distDir": "frontend/dist" }
     },
     {
-      "src": "api/**/*.py",
+      "src": "api/*.py",
       "use": "@vercel/python",
       "config": { "runtime": "python3.11" }
     }
   ],
   "routes": [
-    { "src": "/api/(.*)", "dest": "/api/$1/index.py" },
+    { "src": "/api/(.*)", "dest": "/api/$1.py" },
     { "src": "/(.*)", "dest": "frontend/dist/$1" }
   ]
 }
