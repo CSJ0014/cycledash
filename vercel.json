@@ -1,16 +1,14 @@
 {
   "version": 2,
   "buildCommand": "cd frontend && npm install && npm run build && mkdir -p ../vercel/output/static && cp -r dist/* ../vercel/output/static/",
+  "outputDirectory": "vercel/output",
   "builds": [
-    {
-      "src": "api/**/*.py",
-      "use": "@vercel/python"
-    }
+    { "src": "api/**/*.py", "use": "@vercel/python" }
   ],
   "routes": [
     { "src": "/api/(.*)", "dest": "/api/$1" },
-    { "handle": "filesystem" },
     { "src": "/(.*)", "dest": "/static/$1" },
+    { "handle": "filesystem" },
     { "src": "/.*", "dest": "/static/index.html" }
   ]
 }
