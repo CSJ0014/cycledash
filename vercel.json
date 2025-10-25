@@ -11,6 +11,8 @@
       "use": "@vercel/python"
     }
   ],
+  "buildCommand": "cd frontend && npm install && npm run build",
+  "outputDirectory": "frontend/dist",
   "routes": [
     { "src": "/api/(.*)", "dest": "/api/$1" },
     { "src": "/(.*)", "dest": "frontend/dist/$1" }
