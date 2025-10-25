@@ -14,5 +14,4 @@ app.add_middleware(
 
 @app.get("/api/rides")
 def list_rides():
-    print("✅ /api/rides was called")
     return JSONResponse({"rides": ["demo_ride_001.json", "demo_ride_002.json", "demo_ride_003.json"]})
