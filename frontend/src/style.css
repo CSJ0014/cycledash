@@ -3,24 +3,74 @@ body {
   background: var(--md-sys-color-background);
   color: var(--md-sys-color-on-surface);
   margin: 0;
-}
-
-.appbar-content {
   display: flex;
-  align-items: center;
-  padding: 0 16px;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
+/* --- App Bar --- */
+md-top-app-bar {
+  background: linear-gradient(90deg, var(--md-sys-color-primary), var(--md-sys-color-primary-container));
+  color: white;
+  box-shadow: var(--elev-2);
+  backdrop-filter: var(--backdrop-blur);
+  border-bottom-left-radius: var(--md-sys-shape-corner-large);
+  border-bottom-right-radius: var(--md-sys-shape-corner-large);
+}
+
+/* --- Tabs --- */
 .tab-bar {
   display: flex;
-  justify-content: space-around;
-  border-bottom: 1px solid rgba(0,0,0,0.1);
-  background: var(--md-sys-color-surface);
+  justify-content: center;
+  gap: 8px;
+  padding: 12px;
+  background: transparent;
 }
 
+md-primary-tab {
+  border-radius: var(--md-sys-shape-corner-full);
+  background: var(--md-sys-color-surface);
+  backdrop-filter: var(--backdrop-blur);
+  box-shadow: var(--elev-1);
+  transition: all 0.25s ease;
+  padding: 8px 18px;
+}
+
+md-primary-tab:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--elev-2);
+}
+
+md-primary-tab[active] {
+  background: var(--md-sys-color-primary);
+  color: white;
+}
+
+/* --- Main Surface --- */
 .main-content {
-  padding: 24px;
+  flex: 1;
+  padding: 40px;
   display: grid;
-  gap: 24px;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 28px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+
+/* --- Cards --- */
+md-filled-card {
+  border-radius: var(--md-sys-shape-corner-large);
+  background: var(--md-sys-color-surface);
+  backdrop-filter: var(--backdrop-blur);
+  box-shadow: var(--elev-1);
+  transition: all 0.3s ease;
+}
+
+md-filled-card:hover {
+  box-shadow: var(--elev-2);
+  transform: translateY(-4px);
+}
+
+/* --- Typography --- */
+h2 {
+  font-weight: 600;
+  letter-spacing: -0.01em;
 }

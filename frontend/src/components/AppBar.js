@@ -1,27 +1,43 @@
-// /frontend/src/components/AppBar.js
 import '@material/web/all.js';
 import { ThemeToggle } from './ThemeToggle.js';
 
-export function AppBar(onThemeToggle) {
-  const bar = document.createElement('md-top-app-bar');
-  bar.setAttribute('headline', 'CycleDash');
+export function AppShell() {
+  const wrapper = document.createElement('div');
+  wrapper.className = 'app-shell';
 
-  const container = document.createElement('div');
-  container.className = 'appbar-content';
+  // App Bar
+  const appBar = document.createElement('md-top-app-bar');
+  appBar.setAttribute('headline', 'CycleDash');
+  appBar.style.background = 'var(--md-sys-color-primary)';
+  appBar.style.color = 'white';
 
-  const title = document.createElement('h1');
-  title.textContent = 'CycleDash';
-  title.style.margin = '0';
-  title.style.fontSize = '1.25rem';
-  title.style.flex = '1';
+  const toggle = ThemeToggle();
+  toggle.style.marginLeft = 'auto';
+  appBar.appendChild(toggle);
 
-  const themeBtn = ThemeToggle(onThemeToggle);
+  // Tabs
+  const tabBar = document.createElement('div');
+  tabBar.className = 'tab-bar';
+  tabBar.innerHTML = `
+    <md-primary-tab active>Ride History</md-primary-tab>
+    <md-primary-tab>Ride Analysis</md-primary-tab>
+    <md-primary-tab>Training PMC</md-primary-tab>
+    <md-primary-tab>Analytics</md-primary-tab>
+    <md-primary-tab>Settings</md-primary-tab>
+  `;
 
-  const avatar = document.createElement('md-filled-icon-button');
-  avatar.innerHTML = '<md-icon>person</md-icon>';
+  // Main
+  const main = document.createElement('div');
+  main.className = 'main-content';
+  main.innerHTML = `
+    <md-filled-card>
+      <div style="padding:16px;">
+        <h2>Welcome to CycleDash</h2>
+        <p>This is your Material 3 dashboard foundation.</p>
+      </div>
+    </md-filled-card>
+  `;
 
-  container.append(title, themeBtn, avatar);
-  bar.appendChild(container);
-
-  return bar;
+  wrapper.append(appBar, tabBar, main);
+  return wrapper;
 }

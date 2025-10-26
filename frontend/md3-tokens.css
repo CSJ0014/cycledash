@@ -1,0 +1,26 @@
+:root {
+  /* --- Core Palette --- */
+  --md-sys-color-primary: #8E7CC3;
+  --md-sys-color-primary-container: #B39DDB;
+  --md-sys-color-secondary: #7E57C2;
+  --md-sys-color-surface: rgba(255, 255, 255, 0.72);
+  --md-sys-color-background: #F4F0FA;
+  --md-sys-color-on-surface: #1D1B20;
+
+  /* --- Shape --- */
+  --md-sys-shape-corner-small: 12px;
+  --md-sys-shape-corner-medium: 20px;
+  --md-sys-shape-corner-large: 28px;
+  --md-sys-shape-corner-full: 9999px;
+
+  /* --- Elevation --- */
+  --elev-1: 0 4px 10px rgba(0,0,0,0.08);
+  --elev-2: 0 8px 24px rgba(0,0,0,0.12);
+
+  /* --- Blur (glass) --- */
+  --backdrop-blur: blur(24px);
+  :root {
+  --motion-easing: cubic-bezier(0.2, 0, 0, 1);
+  --motion-duration: 220ms;
+}
+}
