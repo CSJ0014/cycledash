@@ -1,1 +1,65 @@
-/* placeholder */
+/* ────────────────────────────────────────────────
+   Material Design 3 – CycleDash Custom Light Theme
+   Tuned for Web Contrast + Layer Hierarchy
+   ──────────────────────────────────────────────── */
+:root {
+  /* ─── Primary Palette (CycleDash Purple) ─── */
+  --md-sys-color-primary: #6750A4;
+  --md-sys-color-on-primary: #FFFFFF;
+  --md-sys-color-primary-container: #EADDFF;
+  --md-sys-color-on-primary-container: #21005D;
+
+  /* ─── Secondary / Supporting ─── */
+  --md-sys-color-secondary: #625B71;
+  --md-sys-color-on-secondary: #FFFFFF;
+
+  /* ─── Surface System ─── */
+  --md-sys-color-surface: #FAF9FC; /* app background */
+  --md-sys-color-surface-container: #F3EFFA; /* cards / inner surfaces */
+  --md-sys-color-surface-container-high: #E8E5EF; /* top bar / nav */
+  --md-sys-color-on-surface: #1C1B1F; /* main text */
+  --md-sys-color-on-surface-variant: #49454F;
+  --md-sys-color-outline: #C6C1CD;
+
+  /* ─── Error ─── */
+  --md-sys-color-error: #B3261E;
+  --md-sys-color-on-error: #FFFFFF;
+
+  /* ─── Shape ─── */
+  --md-sys-shape-corner-small: 8px;
+  --md-sys-shape-corner-medium: 12px;
+  --md-sys-shape-corner-large: 16px;
+  --md-sys-shape-corner-full: 9999px; /* for pill buttons */
+
+  /* ─── Type Scale ─── */
+  --md-sys-typescale-display-large-size: 57px;
+  --md-sys-typescale-title-large-size: 22px;
+  --md-sys-typescale-title-large-weight: 700;
+  --md-sys-typescale-body-medium-size: 14px;
+  --md-sys-typescale-body-medium-weight: 400;
+  --md-sys-typescale-label-large-size: 14px;
+  --md-sys-typescale-label-large-weight: 500;
+
+  /* ─── Motion ─── */
+  --md-sys-motion-easing-standard: cubic-bezier(0.2, 0, 0, 1);
+  --md-sys-motion-duration-short2: 200ms;
+
+  /* ─── Elevation ─── */
+  --md-elevation-1: 0 1px 3px rgba(0, 0, 0, 0.15);
+  --md-elevation-2: 0 4px 6px rgba(0, 0, 0, 0.12);
+
+  /* ─── Layout ─── */
+  --md-layout-max-width: 1280px;
+  --md-layout-padding: 24px;
+}
+
+/* ─── Optional Dark Theme Placeholder ─── */
+html[data-theme="dark"] {
+  --md-sys-color-primary: #D0BCFF;
+  --md-sys-color-on-primary: #381E72;
+  --md-sys-color-surface: #1C1B1F;
+  --md-sys-color-surface-container: #2B2930;
+  --md-sys-color-surface-container-high: #36343B;
+  --md-sys-color-on-surface: #E6E1E5;
+  --md-sys-color-outline: #938F99;
+}
